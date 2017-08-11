@@ -1,0 +1,27 @@
+{
+  "name": "leetcode",
+  "version": "1.0.0",
+  "description": "leetcode solutions by the newest javascript ES6",
+  "main": "index.js",
+  "scripts": {
+    "format": "prettier --no-semi --trailing-comma none --write '*.js'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wangsongiam/leetcode.git"
+  },
+  "keywords": [
+    "javascript",
+    "ES6",
+    "algorithm"
+  ],
+  "author": "Song Wang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wangsongiam/leetcode/issues"
+  },
+  "homepage": "https://github.com/wangsongiam/leetcode#readme",
+  "dependencies": {
+    "prettier": "^1.5.3"
+  }
+}
