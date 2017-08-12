@@ -18,7 +18,7 @@
  * Note: Given n will be a positive integer.
  * 
  */
-var climbStairs = function(n) {
+const climbStairs = function(n) {
   let arr = [1, 2]
   if (n === 1) return 1
   for (let i = 0; i < n - 1; i++) {

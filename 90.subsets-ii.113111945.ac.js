@@ -36,12 +36,12 @@
  * @return {number[][]}
  */
 
-function subsetsWithDup(nums) {
+const subsetsWithDup = nums => {
   nums.sort((x, y) => x - y)
   return findSubsets([], nums, 0)
 }
 
-function findSubsets(subset, nums, index) {
+const findSubsets = (subset, nums, index) => {
   const subsets = [subset]
   for (let i = index; i < nums.length; i += 1) {
     if (i === index || nums[i] !== nums[i - 1]) {

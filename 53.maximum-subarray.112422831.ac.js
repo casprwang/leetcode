@@ -30,7 +30,7 @@
  * @param {number[]} nums
  * @return {number}
  */
-var maxSubArray = function(nums) {
+const maxSubArray = nums => {
   let max = 0
   let temp = 0
 

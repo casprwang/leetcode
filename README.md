@@ -4,7 +4,7 @@
 
 ## Preferred coding style
 * ES6/7
-  * Map, Set over vanilla Object
+  * properly use Map, Set over Object
   * arrow function all the time
   * `forEach`, `map`, `reduce` over `for` loop
 * [Functional programming](https://github.com/hemanth/functional-programming-jargon)
