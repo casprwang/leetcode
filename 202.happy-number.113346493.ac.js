@@ -41,10 +41,15 @@ const isHappy = n => {
     set.add(n)
 
     let tmp = 0
-    n.toString().split("").forEach(e => {
-      tmp += e ** 2
+    n.toString().split('').forEach(e=>{
+      tmp+= e**2
     })
     n = tmp
+    
   }
   return true
+
 }
+
+console.log(isHappy(7))
+

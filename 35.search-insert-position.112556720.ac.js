@@ -28,15 +28,14 @@
  * @param {number} target
  * @return {number}
  */
-const searchInsert = function(nums, target) {
+var searchInsert = function(nums, target) {
   let max = Math.max(...nums)
 
   if (nums.includes(target)) return nums.indexOf(target)
   else {
-    if (target < max) {
-      return nums.findIndex(e => e > target)
-    } else {
-      return nums.length
+    if (target<max) {
+      return nums.findIndex(e=> e>target)
     }
+    else { return nums.length}
   }
-}
+};

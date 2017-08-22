@@ -52,33 +52,29 @@
  * @param {string} p
  * @return {number[]}
  */
-var findAnagrams = function(s, p) {
-  var frequency = {},
-    visit = {},
-    result = []
+var findAnagrams = function (s, p) {
+  var frequency = {}, visit = {}, result = [];
   for (var i = 0; i < p.length; ++i) {
-    frequency[p[i]] = frequency[p[i]] ? ++frequency[p[i]] : 1
+    frequency[p[i]] = frequency[p[i]] ? ++frequency[p[i]] : 1;
   }
   for (var i = 0; i < p.length; ++i) {
-    visit[s[i]] = visit[s[i]] ? ++visit[s[i]] : 1
+    visit[s[i]] = visit[s[i]] ? ++visit[s[i]] : 1;
   }
 
-  var checkMatch = function(obj1, obj2) {
+  var checkMatch = function (obj1, obj2) {
     for (var key in obj1) {
       if (obj1[key] !== obj2[key]) {
-        return false
+        return false;
       }
     }
-    return true
-  }
+    return true;
+  };
 
   for (var i = 0; i < s.length - p.length + 1; ++i) {
-    if (checkMatch(frequency, visit)) result.push(i)
-    --visit[s[i]]
-    visit[s[i + p.length]] = visit[s[i + p.length]]
-      ? ++visit[s[i + p.length]]
-      : 1
+    if (checkMatch(frequency, visit)) result.push(i);
+    --visit[s[i]];
+    visit[s[i + p.length]] = visit[s[i + p.length]] ? ++visit[s[i + p.length]] : 1;
   }
 
-  return result
-}
+  return result;
+};

@@ -36,9 +36,9 @@ const isValidSudoku = board => {
   return validate(gridTable) && validate(colTable) && validate(normalTable)
 }
 
-const parseData = rawData => rawData.map(row => [...row])
+const parseData = rawData => rawData.map(row=> [...row])
 
-const createTable = num => Array(num).fill("").map(e => Array(num).fill(""))
+const createTable = num => Array(num).fill('').map(e => Array(num).fill(''))
 
 const constructCol = parsedData => {
   let col = createTable(9)
@@ -66,8 +66,9 @@ const constructGrid = parsedData => {
 const validate = table => {
   for (let arr of table) {
     for (let e of arr) {
-      if (!isNaN(e) && arr.indexOf(e) !== arr.lastIndexOf(e)) return false
+      if ( !isNaN(e) && ( arr.indexOf(e)!==arr.lastIndexOf(e) ) ) return false
     }
   }
   return true
 }
+

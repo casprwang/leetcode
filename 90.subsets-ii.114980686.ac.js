@@ -36,18 +36,16 @@
  * @return {number[][]}
  */
 
-const subsetsWithDup = nums => {
-  nums.sort((x, y) => x - y)
-  return findSubsets([], nums, 0)
-}
+const subsetsWithDup = (nums, res = new Set()) => {
+  nums.sort()
+  const iter = (temp, pos) => {
 
-const findSubsets = (subset, nums, index) => {
-  const subsets = [subset]
-  for (let i = index; i < nums.length; i += 1) {
-    if (i === index || nums[i] !== nums[i - 1]) {
-      subsets.push(...findSubsets([...subset, nums[i]], nums, i + 1))
+    for (let i = pos; i < nums.length; i++) {
+      res.add(JSON.stringify([...temp, nums[i]]))
+      iter([...temp,nums[i]], i + 1)
     }
   }
 
-  return subsets
+  iter([], 0)
+  return [...res, '[]'].map(JSON.parse)
 }

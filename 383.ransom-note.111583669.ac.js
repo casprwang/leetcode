@@ -58,4 +58,4 @@ var canConstruct = function(ransomNote, magazine) {
     }
   }
   return flag
-}
+};

@@ -38,15 +38,16 @@
  */
 const subsets = (
   nums,
-  result = []
+  result=[]
 ) => {
-  const iter = (curResult, start) => {
-    result.push([...curResult])
-    for (let i = start; i < nums.length; i++) {
-      iter([...curResult,nums[i]], i+1)
+  nums.sort()
+  const iter = (temp ) => {
+    result.push([...temp])
+    for (let i = 0; i<nums.length; i++ ) {
+      if (nums[i]<= temp[temp.length -1]) continue
+      iter([...temp, nums[i]])
     }
-  }
-
-  iter( [], 0)
+  } 
+  iter([])
   return result
 }

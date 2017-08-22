@@ -27,5 +27,5 @@
  */
 const merge = (nums1, m, nums2, n) => {
   let set = new Set(nums1.concat(nums2))
-  nums1 = [...set].slice(0, m + n).sort()
+  nums1 = [...set].slice(0, m+n).sort()
 }

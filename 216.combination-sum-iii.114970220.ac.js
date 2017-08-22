@@ -40,15 +40,21 @@
  * @return {number[][]}
  */
 const combinationSum3 = (
-  k,n,
-  temp=[],
-  collection = []
+  k, n,
+  output=[]
 ) => {
-  if (k===0 && n ===0) collection.push([...temp])
-  if (n<0) return
-  for(let i = 1; i<=9; i++){
-    if(temp.length > 0 && i <= temp[temp.length -1]) continue
-    combinationSum3(k-1, n-i, [...temp, i], collection)
+  const iter = (temp) => {
+    if(
+      temp.length ===k 
+    &&temp.reduce((acc,e)=> acc+e) ===n 
+    ) output.push([...temp])
+    else {
+      for (let i = 1; i<=9; i++){
+        if (temp.length > 0&&i<=temp[temp.length -1]) continue
+        iter([...temp, i])
+      }
+    }
   }
-  return collection
+  iter([])
+  return output
 }

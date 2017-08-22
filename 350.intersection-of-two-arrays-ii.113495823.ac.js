@@ -57,16 +57,18 @@
 
 // cleaner way
 const intersect = (nums1, nums2) => {
-  //create table
-  let table = nums1.reduce((acc, e) => {
-    acc[e] = acc[e] ? acc[e] + 1 : 1
+  //create table 
+  let table = nums1.reduce((acc, e)=> {
+    acc[e] = acc[e]
+    ? acc[e]+1
+    : 1
     return acc
   }, {})
 
   // filter
-  return nums2.filter(e => {
-    if (table[e]) {
-      table[e] -= 1
+  return nums2.filter(e=>{
+    if (table[e]){
+      table[e]-=1
       return true
     }
     return false

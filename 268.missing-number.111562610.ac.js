@@ -31,8 +31,8 @@
  * @param {number[]} nums
  * @return {number}
  */
-const missingNumber = nums => {
-  const supposesum = (0 + nums.length) * (nums.length + 1) / 2
-  const realsum = nums.reduce((pre, cur) => pre + cur)
+var missingNumber = function(nums) {
+  const supposesum = (0 + nums.length) * ( nums.length + 1) / 2
+  const realsum = nums.reduce((pre, cur)=> pre + cur)
   return supposesum - realsum
-}
+};

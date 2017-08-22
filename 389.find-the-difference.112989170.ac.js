@@ -44,6 +44,6 @@ const findTheDifference = (s, t) => {
     hash[v]--
   }
   for (let key in hash) {
-    if (hash[key] === 1) return key
+    if(hash[key] === 1) return key
   }
 }

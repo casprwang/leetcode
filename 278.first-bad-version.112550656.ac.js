@@ -55,3 +55,4 @@ const solution = isBadVersion => n => {
   }
   return isBadVersion(head) ? head : tail
 }
+

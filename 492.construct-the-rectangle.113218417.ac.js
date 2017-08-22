@@ -76,3 +76,4 @@ const findClosestPair = set => {
     { dif: initialDiff, pair: set[0] }
   ).pair
 }
+

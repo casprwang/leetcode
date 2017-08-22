@@ -47,21 +47,29 @@
  * @param {number} N
  * @return {number}
  */
-// int => int
-const countArrangement = N => {
-  let set = new Set()
-  const dfs = n => {
-    if (n === 1) return 1
-    let counter = 0
-    for (var i = N; i > 0; --i) {
-      if (set.has(i)) continue
-      if (n % i === 0 || i % n === 0) {
-        set.add(i)
-        counter += dfs(n - 1)
-        set.delete(i)
+const countArrangement = function(N) {
+  const hash = {}
+  let solutionCount = 0
+
+  const checkNumbers = function(currentNumber) {
+    for (var i = 1; i <= N; i++) {
+      if (!hash[i]) {
+        hash[i] = currentNumber
+        if (isBeautiful(currentNumber, i)) {
+          if (currentNumber === N) {
+            solutionCount++
+          } else {
+            checkNumbers(currentNumber + 1)
+          }
+        }
+        hash[i] = 0
       }
     }
-    return counter
   }
-  return dfs(N)
+
+  checkNumbers(1)
+  return solutionCount
 }
+
+
+const isBeautiful = (number, index) => (number % index === 0 || index % number === 0)
