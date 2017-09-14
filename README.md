@@ -4,7 +4,7 @@
 
 | # | Problems | Solutions | Difficulty
 |:--:|:-----:|:---------:|:----:|
-|001|[two-sum](https://leetcode.com/problems/two-sum/)| [javascript](https://github.com/wangsongiam/leetcode/blob/master/solutions&#x2F;001.two-sum&#x2F;two-sum.js)|Easy
+|001|[two-sum](https://leetcode.com/problems/two-sum/)| [javascript](.&#x2F;solutions&#x2F;001.two-sum&#x2F;two-sum.js)|Easy
 |007|[reverse-integer](https://leetcode.com/problems/reverse-integer/)| [javascript](.&#x2F;solutions&#x2F;007.reverse-integer&#x2F;reverse-integer.js)|Easy
 |009|[palindrome-number](https://leetcode.com/problems/palindrome-number/)| [javascript](.&#x2F;solutions&#x2F;009.palindrome-number&#x2F;palindrome-number.js)|Easy
 |014|[longest-common-prefix](https://leetcode.com/problems/longest-common-prefix/)| [javascript](.&#x2F;solutions&#x2F;014.longest-common-prefix&#x2F;longest-common-prefix.js)|Easy
