@@ -5,7 +5,7 @@
  */
 const addStrings = function(num1, num2) {
   let [i, j] = [num1.length - 1, num2.length - 1]
-  let ans = ''
+  let ans = ""
   let add = 0
 
   for (; i >= 0 || j >= 0; i--, j--) {

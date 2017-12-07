@@ -11,8 +11,8 @@ const judgeCircle = moves => {
     map[item] = ~~map[item] + 1
   }
 
-  if (map['U'] !== map['D']) return false
-  if (map['L'] !== map['R']) return false
+  if (map["U"] !== map["D"]) return false
+  if (map["L"] !== map["R"]) return false
 
   return true
 }

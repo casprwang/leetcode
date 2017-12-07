@@ -22,4 +22,4 @@ const combinationSum2 = (
 
   iter([],target,0)
   return [...result ].map(JSON.parse)
-};
+}

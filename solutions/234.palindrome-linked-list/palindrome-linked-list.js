@@ -22,6 +22,6 @@ const isPalindrome = head => {
 }
 
 const isPali = arr => {
-  return arr.join('') === arr.reverse().join('')
+  return arr.join("") === arr.reverse().join("")
 }
 

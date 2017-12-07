@@ -16,8 +16,8 @@ const longestPalindrome = function(s) {
     cnt
     ans += cnt & 1 ? cnt - 1 : cnt
     if (cnt & 1 === 1) exsitsOld = true
-//  cnt & 1 && (existOld = true)
+    //  cnt & 1 && (existOld = true)
   }
 
   return ans + exsitsOld
-};
+}

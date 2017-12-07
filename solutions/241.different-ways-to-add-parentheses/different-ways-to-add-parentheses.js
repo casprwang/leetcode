@@ -52,12 +52,12 @@ var diffWaysToCompute = function(input) {
 
   for (let i = 0, len = input.length; i < len; i++) {
     let item = input[i]
-    if ('+-*'.indexOf(item) !== -1) {
+    if ("+-*".indexOf(item) !== -1) {
       let left = diffWaysToCompute(input.substring(0, i))
       let right = diffWaysToCompute(input.substring(i + 1))
       for (let a of left) {
         for (let b of right) {
-          res.push(eval('(' + a + ')' + item + '(' + b + ')'))
+          res.push(eval("(" + a + ")" + item + "(" + b + ")"))
         }
       }
     }

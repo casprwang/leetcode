@@ -10,9 +10,9 @@ const generateParenthesis = n => {
       result.push(str)
       return
     }
-    if (left < n) dfs(str + '(', left + 1, right, n)
-    if (right < n && right < left) dfs(str + ')', left, right + 1, n)
+    if (left < n) dfs(str + "(", left + 1, right, n)
+    if (right < n && right < left) dfs(str + ")", left, right + 1, n)
   }
-  dfs('', 0, 0, n)
+  dfs("", 0, 0, n)
   return result
-};
+}

@@ -6,7 +6,7 @@ const groupAnagrams = strs => {
   let hash = {}
 
   strs.forEach(e=>{
-    let memo = [...e].sort().join('')
+    let memo = [...e].sort().join("")
 
     if(!hash[memo]) {
       hash[memo] = [e]
@@ -16,4 +16,4 @@ const groupAnagrams = strs => {
   })
 
   return [...Object.values(hash)]
-};
+}

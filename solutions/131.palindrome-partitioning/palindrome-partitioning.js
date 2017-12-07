@@ -19,7 +19,7 @@ const partition = s => {
   bfs([], 0)
 
   return res
-};
+}
 
 // const isPali = s => [...s].reverse().join('') === s;
 
@@ -31,4 +31,4 @@ const isPali = s => {
   }
 
   return true
-};
+}

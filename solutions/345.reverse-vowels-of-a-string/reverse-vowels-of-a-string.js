@@ -2,7 +2,7 @@
  * @param {string} s
  * @return {string}
  */
-const set = new Set(['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'])
+const set = new Set(["a", "e", "i", "o", "u", "A", "E", "I", "O", "U"])
 
 const reverseVowels = s => {
   s = [...s]  // O(n)
@@ -28,9 +28,9 @@ const reverseVowels = s => {
     p2--
   }
 
-  return s.join('')
+  return s.join("")
 }
 
 const swap = (s, i, j) => {
-  ;[s[i], s[j]] = [s[j], s[i]]
+  [s[i], s[j]] = [s[j], s[i]]
 }

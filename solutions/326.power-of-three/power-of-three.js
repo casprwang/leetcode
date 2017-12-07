@@ -4,7 +4,7 @@
  */
 const isPowerOfThree = n => 
   n < 1
-  ? false
+    ? false
     : n === 1 
-    ? true
-    : isPowerOfThree(n/3)
+      ? true
+      : isPowerOfThree(n/3)

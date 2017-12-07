@@ -12,14 +12,14 @@ const readBinaryWatch = num => {
     }
   }
   return result
-};
+}
 
 
 const count = n =>{
-  return Number( n.toString(2).split('').reduce((acc,e)=> Number(acc)+Number(e)) )
-};
+  return Number( n.toString(2).split("").reduce((acc,e)=> Number(acc)+Number(e)) )
+}
 
 const leftPad = n => {
-  if(n<10) return '0'+n
-  else return n+''
-};
+  if(n<10) return "0"+n
+  else return n+""
+}

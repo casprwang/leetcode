@@ -33,4 +33,4 @@ const hasPathSum = (root, sum) => {
 
   dfs(root, 0)
   return flag
-};
+}

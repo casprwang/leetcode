@@ -19,4 +19,4 @@ const combinationSum =
     
     iter(0, target, [])
     return result
-  };
+  }

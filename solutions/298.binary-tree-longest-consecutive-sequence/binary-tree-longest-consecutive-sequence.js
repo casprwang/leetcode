@@ -29,4 +29,4 @@ const longestConsecutive = root => {
   dfs(root, 0, root.val)
 
   return max
-};
+}

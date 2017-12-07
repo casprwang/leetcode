@@ -3,11 +3,11 @@
  * @return {boolean}
  */
 const map = new Map([
-  ['6', '9'],
-  ['8', '8'],
-  ['1', '1'],
-  ['9', '6'],
-  ['0', '0']
+  ["6", "9"],
+  ["8", "8"],
+  ["1", "1"],
+  ["9", "6"],
+  ["0", "0"]
 ])
 
 const isStrobogrammatic = nums => {
@@ -15,7 +15,7 @@ const isStrobogrammatic = nums => {
   let p2 = nums.length - 1
 
   while (p1 <= p2) {
-    if (p1 === 0 && nums[p2] === '0') return false
+    if (p1 === 0 && nums[p2] === "0") return false
 
     let left = nums[p1]
     let right = nums[p2]

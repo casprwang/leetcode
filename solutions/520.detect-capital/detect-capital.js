@@ -7,6 +7,6 @@ const detectCapitalUse = word => {
   else if(word.toLowerCase() === word) return true
   else if (word.length>1 && word[0].toUpperCase() === word[0]
   && word.slice(1).toLowerCase() === word.slice(1)
-) return true
+  ) return true
   else return false
 }

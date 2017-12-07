@@ -13,5 +13,5 @@ const subsets = (
     }
   } 
   iter([], 0)
-  return [...result, '[]'].map(JSON.parse)
+  return [...result, "[]"].map(JSON.parse)
 }

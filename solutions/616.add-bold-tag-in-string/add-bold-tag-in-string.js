@@ -17,7 +17,7 @@ const addBoldTag = (s, dict) => {
     bold[i] = end > i
   }
 
-  let res = ''
+  let res = ""
   for (let i = 0; i < s.length; i++) {
     if (bold[i] === false) {
       res += s[i]
@@ -25,7 +25,7 @@ const addBoldTag = (s, dict) => {
     }
 
     let j = i
-    let bolded = ''
+    let bolded = ""
     while (bold[j] === true && j < s.length) {
       bolded += s[j]
       j++

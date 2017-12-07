@@ -4,7 +4,7 @@
   "description": "leetcode solutions by the newest javascript ES6",
   "main": "index.js",
   "scripts": {
-    "format": "prettier --no-semi --trailing-comma none --write '*.js'"
+    "format": "./node_modules/.bin/eslint solutions/ --fix"
   },
   "repository": {
     "type": "git",
@@ -23,5 +23,8 @@
   "homepage": "https://github.com/wangsongiam/leetcode#readme",
   "dependencies": {
     "prettier": "^1.5.3"
+  },
+  "devDependencies": {
+    "eslint": "^4.12.1"
   }
 }

@@ -3,9 +3,9 @@
  * @return {string}
  */
 const convertToBase7 = num => {
-  if (num === 0) return '0'
+  if (num === 0) return "0"
 
-  let sign = String(num)[0] === '-' ? '-' : ''
+  let sign = String(num)[0] === "-" ? "-" : ""
 
   num = Math.abs(num)
 
@@ -16,5 +16,5 @@ const convertToBase7 = num => {
     num = ~~(num / 7)
   }
 
-  return sign + ans.reverse().join('')
+  return sign + ans.reverse().join("")
 }

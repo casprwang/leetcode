@@ -14,5 +14,5 @@ const subsetsWithDup = (nums, res = new Set()) => {
   }
 
   iter([], 0)
-  return [...res, '[]'].map(JSON.parse)
+  return [...res, "[]"].map(JSON.parse)
 }
