@@ -1,6 +1,6 @@
-# Leetcode [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+# Leetcode
 
-> leetcode solutions with ES6
+> leetcode solutions with ES6 and Go
 
 | # | Problems | Solutions | Difficulty
 |:--:|:-----:|:---------:|:----:|
@@ -187,13 +187,6 @@
 |687|[longest-univalue-path](https://github.com/wangsongiam/leetcode/blob/master/solutions/687.longest-univalue-path/question.md)| [javascript](https://github.com/wangsongiam/leetcode/blob/master/solutions/687.longest-univalue-path/longest-univalue-path.js)|Easy
 |729|[my-calendar-i](https://github.com/wangsongiam/leetcode/blob/master/solutions/729.my-calendar-i/question.md)| [javascript](https://github.com/wangsongiam/leetcode/blob/master/solutions/729.my-calendar-i/my-calendar-i.js)|Medium
 
-
-## Preferred coding style
-* ES6/7
-  * properly use Map, Set over Object
-  * arrow function all the time
-  * `forEach`, `map`, `reduce` over `for` loop
-* [Functional programming](https://github.com/hemanth/functional-programming-jargon)
 
 ## Liscense
 MIT
