@@ -12,7 +12,7 @@ const isValidSudoku = board => {
 
 const parseData = rawData => rawData.map(row=> [...row])
 
-const createTable = num => Array(num).fill("").map(e => Array(num).fill(""))
+const createTable = num => Array(num).fill('').map(e => Array(num).fill(''))
 
 const constructCol = parsedData => {
   let col = createTable(9)

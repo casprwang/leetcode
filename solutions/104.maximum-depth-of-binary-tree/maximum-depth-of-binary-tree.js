@@ -13,20 +13,20 @@ const maxDepth = root => {
   if (!root) return 0
 
   let max = 1
-  const iter = (temp, counter) => {
-    if (counter > max) {
-      max = counter
-    }
-    if (temp === null) return
-    counter++
-    if (temp.left !== null) {
-      iter(temp.left, counter)
-    }
-    if (temp.right !== null) {
-      iter(temp.right, counter)
-    }
-  }
 
-  iter(root, 1)
+  const walk = node => {
+    if(!node) return 0
+
+    let leftDepth = walk(node.left) + 1
+    let rightDepth = walk(node.right) + 1
+
+    let depth = Math.max(leftDepth, rightDepth)
+
+    max = Math.max(depth,max)
+
+    return depth
+  }
+    
+  walk(root)
   return max
 }

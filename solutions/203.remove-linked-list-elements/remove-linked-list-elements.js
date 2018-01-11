@@ -11,15 +11,30 @@
  * @return {ListNode}
  */
 
+// // recursive
+// const removeElements = (head, val) => {
+//   if (head === null) return null
+
+//   head.next = removeElements(head.next, val)
+
+//   return head.val === val ? head.next : head
+// }
+
+
+// iterative
 const removeElements = (head, val) => {
-  if(!head) return null
-  let temp = head
-  while (temp) {
-    while (temp.next && temp.next.val === val) {
-      temp.next = temp.next.next
+  let ref = new ListNode(1)
+  ref.next = head
+
+  let res = ref
+
+  while (ref.next) {
+    if (ref.next.val === val) {
+      ref.next = ref.next.next
+    } else {
+      ref = ref.next
     }
-    temp = temp.next
   }
 
-  return head.val === val ? head.next: head
+  return res.next
 }

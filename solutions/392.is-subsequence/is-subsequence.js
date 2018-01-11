@@ -4,19 +4,23 @@
  * @return {boolean}
  */
 const isSubsequence = (s, t) => {
-  if(s.length === 0) return true
+  // greedy
+  if(t.length < s.length) return false
 
-  let indexS = 0
-  let indexT = 0
+  let p = 0
+  let cur = 0
 
-  while(indexT < t.length) {
-    if(t[indexT] === s[indexS]) {
-      indexS++
-      if(indexS === s.length) return true
+  while (p < s.length) {
+    let item = s[p]
+
+    // check item in t
+    if (t.indexOf(item, cur) !== -1) {
+      cur = t.indexOf(item, cur) + 1
+    } else {
+      return false
     }
-
-    indexT++
+    p++
   }
 
-  return false
+  return true
 }

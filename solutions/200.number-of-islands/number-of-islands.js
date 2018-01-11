@@ -2,39 +2,98 @@
  * @param {character[][]} grid
  * @return {number}
  */
-var numIslands = function(board) {
-  if (!board || !board.length) return 0
-  var lenX = board[0].length, lenY = board.length
-  var visited = [], result = 0
-  for (var i = 0; i < lenY; ++i) visited[i] = []
+// const numIslands = grid => {
+//   // bfs
+//   if (grid.length === 0) return 0
+//   let m = grid.length
+//   let n = grid[0].length
+//   let res = 0
 
-  var recursion = function (nodes) {
-    if (!nodes.length) return
-    var widerNodes = []
-    for (var i = 0, len = nodes.length; i < len; ++i) {
-      if (!visited[nodes[i][0]][nodes[i][1]]) {
-        visited[nodes[i][0]][nodes[i][1]] = true
-        if (board[nodes[i][0]] && "1" === board[nodes[i][0]][nodes[i][1] - 1] && !visited[nodes[i][0]][nodes[i][1] - 1])
-          widerNodes.push([nodes[i][0], nodes[i][1] - 1])
-        if (board[nodes[i][0] + 1] && "1" === board[nodes[i][0] + 1][nodes[i][1]] && !visited[nodes[i][0] + 1][nodes[i][1]])
-          widerNodes.push([nodes[i][0] + 1, nodes[i][1]])
-        if (board[nodes[i][0]] && "1" === board[nodes[i][0]][nodes[i][1] + 1] && !visited[nodes[i][0]][nodes[i][1] + 1])
-          widerNodes.push([nodes[i][0], nodes[i][1] + 1])
-        if (board[nodes[i][0] - 1] && "1" === board[nodes[i][0] - 1][nodes[i][1]] && !visited[nodes[i][0] - 1][nodes[i][1]])
-          widerNodes.push([nodes[i][0] - 1, nodes[i][1]])
+//   for (let i = 0; i < m; i++) {
+//     for (let j = 0; j < n; j++) {
+//       if (grid[i][j] === '1') {
+//         bfs(i, j)
+//         res++
+//       }
+//     }
+//   }
+
+//   function bfs(i, j) {
+//     grid[i][j] = '0'
+
+//     if ( i< m-1 && grid[i + 1][j] === '1') {
+//       bfs(i + 1, j)
+//     }
+//     if ( j < n -1 &&grid[i][j + 1] === '1') {
+//       bfs(i, j + 1)
+//     }
+//     if (j>0 && grid[i][j-1] === '1') {
+//       bfs(i, j - 1)
+//     }
+//     if (i>0 && grid[i-1][j] === '1') {
+//       bfs(i-1, j)
+//     }
+//   }
+
+//   return res
+// }
+
+/**
+ * @param {character[][]} grid
+ * @return {number}
+ */
+// const numIslands = grid => {
+//   // bfs
+//   if (grid.length === 0) return 0
+//   let m = grid.length
+//   let n = grid[0].length
+//   let res = 0
+
+//   for (let i = 0; i < m; i++) {
+//     for (let j = 0; j < n; j++) {
+//       if (grid[i][j] === '1') {
+//         bfs(i, j)
+//         res++
+//       }
+//     }
+//   }
+
+//   function bfs(i, j) {
+//     if(i<0 || j<0 || i>=m || j>=n) return
+//     if(grid[i][j] ==='0') return
+
+//     grid[i][j] = '0'
+//     bfs(i + 1, j)
+//     bfs(i, j + 1)
+//     bfs(i, j - 1)
+//     bfs(i-1, j)
+//   }
+
+//   return res
+// }
+
+const numIslands = grid => {
+  let count = 0
+
+  for (let i = 0; i < grid.length; i++) {
+    for (let j = 0; j < grid[0].length; j++) {
+      if (grid[i][j] === '1') {
+        walk(grid, i, j)
+        count++
       }
     }
-    recursion(widerNodes)
   }
 
-  for (var i = 0; i < lenY; ++i) {
-    for (var j = 0; j < lenX; ++j) {
-      if ("1" === board[i][j] && !visited[i][j]) {
-        ++result
-        recursion([[i, j]])
-      }
-    }
-  }
+  return count
+}
 
-  return result
+
+const walk = (grid, i, j) => {
+  if (i < 0 || i >= grid.length || j < 0 || j >= grid[0].length || grid[i][j] === '0') return
+  grid[i][j] = '0'
+
+  walk(grid, i + 1, j)
+  walk(grid, i, j + 1)
+  walk(grid, i - 1, j)
+  walk(grid, i, j - 1)
 }

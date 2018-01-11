@@ -12,18 +12,18 @@
  * @return {TreeNode}
  */
 const lowestCommonAncestor = (root, p, q) => {
-  while(root) {
-    if(p.val > root.val && q.val > root.val) {
-      root = root.right
+  while (root) {
+    if (p.val < root.val && q.val < root.val) {
+      root = root.left
       continue
     }
 
-    if(p.val < root.val && q.val < root.val) {
-      root = root.left
+    if (p.val > root.val && q.val > root.val) {
+      root = root.right
       continue
     }
 
     return root
   }
-}
 
+}

@@ -1,25 +1,28 @@
-/**
- * @param {number} num
- * @return {string[]}
- */
 const readBinaryWatch = num => {
-  let result = []
-  for (let i =0; i<12; i++) {
-    for (let j =0; j<60; j++) {
-      if(count(i) + count(j)===num) {
-        result.push(`${i}:${leftPad(j)}`)
-      }
+  let res = []
+
+  for (let i = 0; i < 12; i++) {
+    for (let j = 0; j < 60; j++) {
+      if (count(i) + count(j) === num) res.push(leftPad(i, j))
     }
   }
-  return result
+
+  return res
 }
 
-
-const count = n =>{
-  return Number( n.toString(2).split("").reduce((acc,e)=> Number(acc)+Number(e)) )
+const count = n => {
+  return n
+    .toString(2)
+    .split('')
+    .reduce((acc, e) => Number(acc) + Number(e), 0)
 }
 
-const leftPad = n => {
-  if(n<10) return "0"+n
-  else return n+""
-}
+const leftPad = (i, j) => {
+  if (i < 10) i = '' + i
+  else i = '' + i
+
+  if (j < 10) j = '0' + j
+  else j = '' + j
+
+  return `${i}:${j}`
+};

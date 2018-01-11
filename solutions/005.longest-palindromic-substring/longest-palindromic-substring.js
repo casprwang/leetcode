@@ -27,4 +27,4 @@ const longestPalindrome = s => {
   }
 
   return s.slice(start, start + max)
-}
+};

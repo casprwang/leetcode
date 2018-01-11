@@ -22,8 +22,8 @@ const intersect = (nums1, nums2) => {
   //create table 
   let table = nums1.reduce((acc, e)=> {
     acc[e] = acc[e]
-      ? acc[e]+1
-      : 1
+    ? acc[e]+1
+    : 1
     return acc
   }, {})
 

@@ -3,19 +3,32 @@
  * @param {string} num2
  * @return {string}
  */
-const addStrings = function(num1, num2) {
-  let [i, j] = [num1.length - 1, num2.length - 1]
-  let ans = ""
-  let add = 0
+const addStrings = (num1, num2) => {
+  let res = ''
+  let p1 = num1.length - 1
+  let p2 = num2.length - 1
 
-  for (; i >= 0 || j >= 0; i--, j--) {
-    let a = i >= 0 ? +num1[i] : 0
-    let b = j >= 0 ? +num2[j] : 0
-    let sum = a + b + add
-    ans = sum % 10 + ans
-    add = ~~(sum / 10)
+  let carrier = 0
+  while (num1[p1] !== undefined || num2[p2] !== undefined) {
+    let n1 = num1[p1] || 0
+    let n2 = num2[p2] || 0
+
+    let sum = carrier + Number(n1) + Number(n2)
+    if (sum > 9) {
+      carrier = 1
+      res = sum % 10 + res
+    } else {
+      carrier = 0
+      res = sum + res
+    }
+
+    p1--
+    p2--
   }
 
-  add && (ans = add + ans)
-  return ans
+  if (carrier) {
+    res = 1 + res
+  }
+
+  return res
 }

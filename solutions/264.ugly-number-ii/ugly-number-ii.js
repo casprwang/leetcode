@@ -3,14 +3,20 @@
  * @return {number}
  */
 const nthUglyNumber = n => {
-  let ugly = [1,...Array(n-1).fill(0)]
-  let f2=0,f3=0,f5=0
-  for(var i=1; i<n; i++){
-    var min = Math.min.apply(Math, [2*ugly[f2],3*ugly[f3],5*ugly[f5]])
-    ugly[i] = min
-    if (2*ugly[f2] === min) f2++
-    if (3*ugly[f3] === min) f3++
-    if (5*ugly[f5] === min) f5++
+  let arr = [1]
+
+  let p1 = 0
+  let p2 = 0
+  let p3 = 0
+
+  for (let i = 1; i < n; i++) {
+    let next = Math.min(arr[p1] * 2, arr[p2] * 3, arr[p3] * 5)
+    arr[i] = next
+
+    if (next === arr[p1] * 2) p1++
+    if (next === arr[p2] * 3) p2++
+    if (next === arr[p3] * 5) p3++
   }
-  return ugly[n-1]
+
+  return arr[arr.length - 1]
 }

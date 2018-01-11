@@ -3,24 +3,23 @@
  * @param {string[]} list2
  * @return {string[]}
  */
-const findRestaurant = function(list1, list2) {
-  let map = new Map()
-  let res = []
-  let min = 9999
-  for (let i = 0; i < list1.length; i++) {
-    map.set(list1[i], i)
-  }
+const findRestaurant = (list1, list2) => {
+  let set = new Set(list1)
+
+  let hash = {}
   for (let i = 0; i < list2.length; i++) {
-    if (map.has(list2[i])) {
-      let j = map.get(list2[i])
-      if (i + j < min) {
-        min = i + j
-        res = []
-        res.push(list2[i])
-      } else if (i + j === min) {
-        res.push(list2[i])
-      }
+    let item = list2[i]
+    if (set.has(item)) {
+      hash[item] = list1.indexOf(item) + list2.indexOf(item)
     }
   }
+
+  let arr = Object.entries(hash).sort((a, b) => a[1] - b[1])
+  let res = []
+
+  for(let i =0; i<arr.length; i++){
+    if(arr[i][1] === arr[0][1]) res.push(arr[i][0])
+  }
+
   return res
-}
+};

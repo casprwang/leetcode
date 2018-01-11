@@ -1,4 +1,4 @@
-/**
+    /**
  * Definition for a binary tree node.
  * function TreeNode(val) {
  *     this.val = val;
@@ -10,26 +10,25 @@
  * @param {number} target
  * @return {number}
  */
-const closestValue = (root, target) => {
-  let diff = Infinity
+const closestValue = (root, value) => {
+  let diff = Number.MAX_SAFE_INTEGER
   let res
 
-  const dfs = node => {
-    if (Math.abs(node.val - target) < diff) {
-      diff = Math.abs(node.val - target)
+  const iter = (node) => {
+    if (!node) return
+
+    let abs = Math.abs(node.val - value)
+
+    if (abs < diff) {
       res = node.val
+      diff = abs
     }
 
-    if (node.left) {
-      dfs(node.left)
-    }
-
-    if (node.right) {
-      dfs(node.right)
-    }
+    iter(node.left)
+    iter(node.right)
   }
 
-  dfs(root)
+  iter(root)
 
   return res
 }

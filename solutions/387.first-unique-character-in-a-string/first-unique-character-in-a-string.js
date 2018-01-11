@@ -2,15 +2,10 @@
  * @param {string} s
  * @return {number}
  */
-const firstUniqChar = s => {
-  let hash = {}
-
-  for(let i =0; i<s.length; i++) {
-    hash[s[i]] = ~~hash[s[i]] +1
-  }
-
-  for(let i=0; i<s.length; i++){
-    if(hash[s[i]]===1) return i 
+function firstUniqChar (s) {
+  for (let i = 0; i < s.length; i++) {
+    let item = s[i]
+    if (s.indexOf(item) === s.lastIndexOf(item)) return i
   }
 
   return -1

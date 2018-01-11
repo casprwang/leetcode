@@ -12,4 +12,4 @@ const findMin = nums => {
   }
 
   return min
-}
+};

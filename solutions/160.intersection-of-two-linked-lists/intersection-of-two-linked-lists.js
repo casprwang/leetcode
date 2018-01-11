@@ -12,35 +12,18 @@
  * @return {ListNode}
  */
 const getIntersectionNode = (headA, headB) => {
-  let lenA = getLen(headA)
-  let lenB = getLen(headB)
+  let set = new Set()
 
-  while (lenA < lenB) {
-    headB = headB.next
-    lenB--
+  while (headA) {
+    set.add(headA.val)
+    headA = headA.next
   }
 
-  while (lenA > lenB) {
-    headA = headA.next
-    lenA--
-  }
+  while (headB) {
+    if (set.has(headB.val)) return headB
 
-  while (headA && headB) {
-    if (headA === headB) return headA
-
-    headA = headA.next
     headB = headB.next
   }
 
   return null
-}
-
-const getLen = head => {
-  let len = 0
-  while (head) {
-    len++
-    head = head.next
-  }
-
-  return len
 }

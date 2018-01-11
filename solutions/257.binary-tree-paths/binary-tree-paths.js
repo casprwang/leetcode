@@ -16,7 +16,7 @@ const binaryTreePaths = root => {
 
   const dfs = (node, temp) => {
     if (node.left === null && node.right === null) {
-      res.push([...temp, node.val].join("->"))
+      res.push([...temp, node.val].join('->'))
       return
     }
 

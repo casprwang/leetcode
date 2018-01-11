@@ -2,10 +2,11 @@
  * @param {number[]} nums
  * @return {number}
  */
-var findDuplicate = function(nums) {
-  for (let num of nums) {
-    if (nums.indexOf(num) !== nums.lastIndexOf(num)) {
-      return num 
-    }
+const findDuplicate = nums => {
+  let len = nums.length
+
+  for (let i = 0; i < len; i++) {
+    let item = nums[i]
+    if (nums.indexOf(item) !== nums.lastIndexOf(item)) return item
   }
 }

@@ -3,16 +3,23 @@
  * @return {string[]}
  */
 const generateParenthesis = n => {
-  let result = []
+  const res = []
 
-  const dfs = (str, left, right, n) => {
-    if (left === n && right === n) {
-      result.push(str)
+  const bfs = (temp, left, right) => {
+    if (temp.length === n * 2) {
+      res.push(temp)
       return
     }
-    if (left < n) dfs(str + "(", left + 1, right, n)
-    if (right < n && right < left) dfs(str + ")", left, right + 1, n)
+
+    if (left < n) {
+      bfs(temp + '(', left + 1, right)
+    }
+    if (right < left) {
+      bfs(temp + ')', left, right + 1)
+    }
   }
-  dfs("", 0, 0, n)
-  return result
-}
+
+  bfs('', 0, 0)
+
+  return res
+};

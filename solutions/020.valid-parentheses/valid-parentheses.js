@@ -2,17 +2,31 @@
  * @param {string} s
  * @return {boolean}
  */
-const isValid = s =>{
+const map = new Map([
+  [')', '('],
+  [']', '['],
+  ['}', '{'],
+])
+
+const isValid = n => {
+  if (n.length === 0) return true
+
   let stack = []
-  let map = new Map([
-    ["(", ")"],
-    ["{", "}"],
-    ["[", "]"]
-  ])
-  s.split("").forEach((e)=>{
-    if(stack.length ===0) stack.push(e)
-    else if(e === map.get( stack[stack.length -1] )) stack.pop()
-    else stack.push(e)
-  })
-  return stack.length ===0
+  for (let i = 0; i < n.length; i++) {
+    let item = n[i]
+    if (stack.length === 0) {
+      stack.push(item)
+      continue
+    }
+
+    if (stack[stack.length - 1] === map.get(item)) {
+      stack.pop()
+      continue
+    }
+
+    stack.push(item)
+  }
+
+  return stack.length === 0
 }
+

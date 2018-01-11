@@ -9,17 +9,30 @@
  * @param {ListNode} head
  * @return {ListNode}
  */
+
+//  // iterative
+// const deleteDuplicates = head => {
+//   if (!head) return null
+//   let ref = head
+
+//   while (head.next) {
+//     if (head.val === head.next.val) {
+//       head.next = head.next.next
+//     } else {
+//       head = head.next
+//     }
+//   }
+
+//   return ref
+// }
+
+
+// recursive
 const deleteDuplicates = head => {
-  if (head === null || head.next === null) return head
-  var cur = head
+  if (!head || !head.next) return head
 
-  while (cur.next !== null) {
-    if (cur.val == cur.next.val) {
-      cur.next = cur.next.next
-    } else {
-      cur = cur.next
-    }
-  }
-  return head
+  head.next = deleteDuplicates(head.next)
+
+  if (head.val === head.next.val) return head.next
+  else return head
 }
-

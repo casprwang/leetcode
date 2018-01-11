@@ -4,7 +4,7 @@
  * @return {boolean}
  */
 const wordPattern = (pattern, str) => {
-  let arr = str.split(" ")
+  let arr = str.split(' ')
   if (pattern.length !== arr.length) return false
 
   let hashA = new Map()

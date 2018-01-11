@@ -2,11 +2,11 @@
  * @param {number} num
  * @return {boolean}
  */
-
-const isUgly = n => {
-  if (n < 1) return false
-  if (n % 2 === 0) return isUgly(n / 2)
-  if (n % 3 === 0) return isUgly(n / 3)
-  if (n % 5 === 0) return isUgly(n / 5)
-  return 1 === n
+const isUgly = num => {
+  if (num < 1) return false
+  if (num === 1) return true
+  if (Number.isInteger(num / 2)) return isUgly(num / 2)
+  if (Number.isInteger(num / 3)) return isUgly(num / 3)
+  if (Number.isInteger(num / 5)) return isUgly(num / 5)
+  return false
 }

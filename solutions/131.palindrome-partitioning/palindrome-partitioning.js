@@ -4,31 +4,39 @@
  */
 const partition = s => {
   let res = []
-  const bfs = (list, pos)=>{
-    if(list.length> 0&& pos === s.length ){
-      res.push(list)
+
+  const backtrack = (temp, pos) => {
+    if (pos === s.length) {
+      res.push(temp)
+      return
     }
-    for(let i = pos; i<s.length; i++) {
-      let temp = s.substring(pos, i+1)
-      if(isPali(temp)){
-        bfs([...list, temp], i+1)
+
+    for (let i = pos; i < s.length; i++) {
+      let sub = s.substring(pos, i + 1)
+      if (sub === '') continue
+
+      if (isPali(sub)) {
+        backtrack([...temp, sub], i + 1)
       }
     }
   }
 
-  bfs([], 0)
+  backtrack([], 0)
 
   return res
 }
 
-// const isPali = s => [...s].reverse().join('') === s;
 
 const isPali = s => {
-  let high = s.length-1
-  let low = 0
-  while (low < high) {
-    if (s.charAt(low++) !== s.charAt(high--)) return false
+  let p1 = 0
+  let p2 = s.length - 1
+
+  while (p1 < p2) {
+    if (s[p1] !== s[p2]) return false
+    p1++
+    p2--
   }
 
   return true
 }
+

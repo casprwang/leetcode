@@ -13,4 +13,4 @@ var searchInsert = function(nums, target) {
     }
     else { return nums.length}
   }
-}
+};

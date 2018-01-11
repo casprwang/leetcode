@@ -2,16 +2,21 @@
  * @param {number[]} nums
  * @return {void} Do not return anything, modify nums in-place instead.
  */
-const moveZeroes = nums => {
-  for (let i =0; i<nums.length; i++){
-    if (nums[i]===0) {
-      for (let j = i; j<nums.length; j++){
-        if(nums[j] !== 0) {
-          nums[i] = nums[j]
-          nums[j] = 0
-          break
-        }
-      }
+function moveZeroes(nums) {
+  let j = 0
+  let len = nums.length
+
+  for (let i = 0; i < len; i++) {
+    let item = nums[i]
+    if (item !== 0) {
+      nums[j] = item
+      j++
     }
   }
+
+  while (j < len) {
+    nums[j] = 0
+    j++
+  }
+
 }

@@ -3,8 +3,8 @@
  * @param {string} b
  * @return {number}
  */
-const findLUSlength = 
-  (a,b)=> 
-    a===b 
-      ? -1
-      : Math.max(a.length, b.length)
+const findLUSlength = (a, b) => {
+  // aba ,   abca
+  let res = Math.max(a.length, b.length)
+  return a===b? -1: res
+}

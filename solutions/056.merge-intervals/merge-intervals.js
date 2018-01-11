@@ -1,54 +1,33 @@
-/**
- * Definition for an interval.
- * function Interval(start, end) {
- *     this.start = start;
- *     this.end = end;
- * }
- */
-/**
- * @param {Interval[]} intervals
- * @return {Interval[]}
- */
 const merge = intervals => {
-  if (intervals.length < 2) return intervals
-
-
+  if (!intervals.length) return []
   intervals.sort((a, b) => a.start - b.start)
 
-  let res = []
+  let len = intervals.length
+
   let end = intervals[0].end
   let start = intervals[0].start
 
-  let p = 1
+  let res = []
 
-  // [1,2] [1,3]
-  while (p < intervals.length) {
-    let item = intervals[p]
+  for (let i = 1; i < len; i++) {
+    let item = intervals[i]
 
-    // overlap
-    if (item.start <= end) {
-      start = Math.min(start, item.start)
-      end = Math.max(end, item.end)
+    let curStart = item.start
+    let curEnd = item.end
 
-      p++
-      continue
+    if (curStart <= end) {
+      // connected
+      start = Math.min(start, curStart)
+      end = Math.max(end, curEnd)
+    } else {
+      // disconnected
+      res.push(new Interval(start, end))
+      start = curStart
+      end = curEnd
     }
-
-    // [1,2] [3  ,4]
-    // s  e   i.s i.e
-    if (item.start > end) {
-      res.push([start, end])
-
-      start = item.start
-      end = item.end
-
-      p++
-      continue
-    }
-
-    // non - overlap
   }
-  res.push([start, end])
+
+  res.push(new Interval(start, end))
 
   return res
-}
+};

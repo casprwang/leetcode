@@ -22,7 +22,7 @@ const summaryRanges = nums => {
   return res.map(e => {
     if (e.length === 1) return String(e[0])
     else {
-      return e.join("->")
+      return e.join('->')
     }
   })
 }

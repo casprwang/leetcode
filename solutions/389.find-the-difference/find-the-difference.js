@@ -3,15 +3,29 @@
  * @param {string} t
  * @return {character}
  */
+// const findTheDifference = (s, t) => {
+//   s = [...s].sort()
+//   t = [...t].sort()
+
+//   let p = 0
+//   while (p < t.length) {
+//     if (s[p] !== t[p]) return t[p]
+
+//     p++
+//   }
+// }
+
+
 const findTheDifference = (s, t) => {
-  let hash = {}
-  for (let v of [...t]) {
-    hash[v] ? hash[v]++ : (hash[v] = 1)
+  let sum = 0
+
+  for (let i in t) {
+    sum += t.charCodeAt(i)
   }
-  for (let v of [...s]) {
-    hash[v]--
+
+  for (let i in s) {
+    sum -= s.charCodeAt(i)
   }
-  for (let key in hash) {
-    if(hash[key] === 1) return key
-  }
+
+  return String.fromCharCode(sum)
 }

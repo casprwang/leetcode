@@ -5,10 +5,12 @@
  */
 const twoSum = (nums, target) => {
   let set = new Set()
-  let output = []
-  nums.forEach((e,ind)=>{
-    if (set.has(e)) output =[ind, nums.indexOf(target -e)].sort()
-    set.add(target - e)
-  })
-  return output
+
+  let len = nums.length
+  for (let i = 0; i < len; i++) {
+    let item = nums[i]
+
+    if (set.has(item)) return [i, nums.indexOf(target - item)].sort()
+    else set.add(target - item)
+  }
 }

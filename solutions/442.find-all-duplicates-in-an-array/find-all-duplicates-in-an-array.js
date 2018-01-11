@@ -13,4 +13,4 @@ const findDuplicates = nums => {
   }
 
   return res
-}
+};

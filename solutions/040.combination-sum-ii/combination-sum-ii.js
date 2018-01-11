@@ -3,23 +3,28 @@
  * @param {number} target
  * @return {number[][]}
  */
-
-const combinationSum2 = (
-  candidates,
-  target,
-  result=new Set()
-) => {
+const combinationSum2 = (candidates, target) => {
+  let result = []
+  let visited = new Array(candidates.length).fill(false)
   candidates.sort()
-  const iter = (temp,target,pos) => {
-    if(target< 0) return
-    if(target ===0) result.add(JSON.stringify([...temp]))
-    else {
-      for (let i=pos; i<candidates.length; i++ ){
-        iter([...temp, candidates[i]], target-candidates[i], i+1)
-      }
+
+  const bfs = (temp, pos, left) => {
+    if (left < 0) return
+    if (left === 0) {
+      result.push(temp)
+    }
+
+    for (let i = pos; i < candidates.length; i++) {
+      if (visited[i]) continue
+      if (!visited[i - 1] && candidates[i] === candidates[i - 1]) continue
+
+      visited[i] = true
+      bfs([...temp, candidates[i]], i, left - candidates[i])
+      visited[i] = false
     }
   }
 
-  iter([],target,0)
-  return [...result ].map(JSON.parse)
+  bfs([], 0, target)
+
+  return result
 }

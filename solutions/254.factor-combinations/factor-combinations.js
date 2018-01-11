@@ -22,4 +22,4 @@ const getFactors = n => {
   bfs([], n, 2)
 
   return res
-}
+};

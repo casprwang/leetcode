@@ -56,4 +56,4 @@ const jump = nums => {
   }
 
   return 0
-}
+};

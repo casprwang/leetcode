@@ -11,26 +11,18 @@
  * @return {boolean}
  */
 const hasPathSum = (root, sum) => {
-  if (!root) return false
-
   let flag = false
-  const dfs = (node, s) => {
-    if (node.left === null && node.right === null) {
-      if (node.val + s === sum) {
-        flag = true
-        return
-      }
-    }
 
-    if (node.left) {
-      dfs(node.left, s + node.val)
-    }
+  const walk = (node, target) => {
+    if (!node) return
 
-    if (node.right) {
-      dfs(node.right, s + node.val)
-    }
+    if (node.val === target && !node.left && !node.right) flag = true
+
+    walk(node.left, target - node.val)
+    walk(node.right, target - node.val)
   }
 
-  dfs(root, 0)
+  walk(root, sum)
+
   return flag
 }

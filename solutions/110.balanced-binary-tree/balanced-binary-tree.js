@@ -9,22 +9,40 @@
  * @param {TreeNode} root
  * @return {boolean}
  */
+// top down
+// const isBalanced = root => {
+//   let flag = true
+
+//   const walk = node => {
+//     if (!node) return 0
+
+//     let left = walk(node.left) + 1
+//     let right = walk(node.right) + 1
+
+//     if (Math.abs(left - right) > 1) flag = false
+
+//     return Math.max(left, right)
+//   }
+
+//   walk(root)
+
+//   return flag
+// }
 
 
 const isBalanced = root => {
-  let flag = true
-  const dfs = node => {
-    // depth of this node is 0
-    if(!node) return 0
+  const walk = node => {
+    if (!node) return 0
 
-    let left = dfs(node.left)
-    let right = dfs(node.right)
+    let left = walk(node.left) + 1
+    let right = walk(node.right) + 1
 
-    if(Math.abs(left - right) > 1) flag = false
+    if (left === 0 || right === 0) return -1
 
-    return Math.max(left, right) +1
+    if (Math.abs(left - right) > 1) return -1
+
+    return Math.max(left, right)
   }
 
-  dfs(root)
-  return flag
+  return walk(root) !== -1
 }

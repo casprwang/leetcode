@@ -2,8 +2,12 @@
  * @param {number[]} nums
  * @return {number}
  */
-var missingNumber = function(nums) {
-  const supposesum = (0 + nums.length) * ( nums.length + 1) / 2
-  const realsum = nums.reduce((pre, cur)=> pre + cur)
-  return supposesum - realsum
+const missingNumber = nums => {
+  for (let i = 0; i < nums.length; i++) {
+    let num = nums[i]
+
+    if (nums.indexOf(i) === -1) return i
+  }
+
+  return nums.length
 }

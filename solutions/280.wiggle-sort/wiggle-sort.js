@@ -3,7 +3,7 @@
  * @return {void} Do not return anything, modify nums in-place instead.
  */
 const swap = (nums, i, j) => {
-  [nums[i], nums[j]] = [nums[j], nums[i]]
+  ;[nums[i], nums[j]] = [nums[j], nums[i]]
 }
 
 const wiggleSort = nums => {

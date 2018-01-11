@@ -12,4 +12,4 @@ var removeDuplicates = function(nums) {
     else set.add(nums[i]) 
   }
   return nums.length
-}
+};

@@ -2,14 +2,14 @@
  * @param {number[]} nums
  * @return {boolean}
  */
-
-// containDuplicate :: []int -> bool
 const containsDuplicate = nums => {
   let set = new Set()
-  let flag = false
-  nums.forEach(e=>{
-    if (set.has(e)) flag = true
-    set.add(e)
-  })
-  return flag
+
+  for (let i = 0; i < nums.length; i++) {
+    let item = nums[i]
+    if (set.has(item)) return true
+    set.add(item)
+  }
+
+  return false
 }

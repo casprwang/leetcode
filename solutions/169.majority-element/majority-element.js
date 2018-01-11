@@ -3,9 +3,17 @@
  * @return {number}
  */
 const majorityElement = nums => {
-  return nums.reduce((acc,e)=>{
-    if (acc.hash[e]+1 >= nums.length/2) acc.output = e
-    else acc.hash[e] = acc.hash[e]+1 || 1
-    return acc
-  }, {hash:{}, output:nums[0]}).output
+  let hash = {}
+
+  let len = nums.length
+  for (let i = 0; i < len; i++) {
+    let item = nums[i]
+    if (item in hash) {
+      hash[item]++
+    } else {
+      hash[item] = 1
+    }
+
+    if (hash[item] > len / 2) return item
+  }
 }

@@ -2,22 +2,26 @@
  * @param {string} s
  * @return {number}
  */
-const longestPalindrome = function(s) {
-  let hash = {}
+const longestPalindrome = s => {
+  let map = {}
 
-  for (let item of s) hash[item] = ~~hash[item] + 1
-
-  let exsitsOld = false
-  let ans = 0
-
-  hash
-  for (let key in hash) {
-    let cnt = hash[key]
-    cnt
-    ans += cnt & 1 ? cnt - 1 : cnt
-    if (cnt & 1 === 1) exsitsOld = true
-    //  cnt & 1 && (existOld = true)
+  for (let letter of s) {
+    map[letter] = ~~map[letter] + 1
   }
 
-  return ans + exsitsOld
+  let maxOdd = 0
+  let evenSum = 0
+  let hasOdd = 0
+  
+  for (let val of Object.values(map)) {
+    if (val & 1) {
+      // odd
+      evenSum += val - 1
+      hasOdd = 1
+    } else {
+      evenSum += val
+    }
+  }
+
+  return maxOdd + evenSum + hasOdd
 }

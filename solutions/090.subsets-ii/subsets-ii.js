@@ -2,17 +2,20 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
+const subsetsWithDup = nums => {
+  let set = new Set()
 
-const subsetsWithDup = (nums, res = new Set()) => {
-  nums.sort()
-  const iter = (temp, pos) => {
+  const bfs = (temp, pos) => {
+    let item = JSON.stringify(temp.sort())
+    if (set.has(item)) return
+    set.add(item)
 
     for (let i = pos; i < nums.length; i++) {
-      res.add(JSON.stringify([...temp, nums[i]]))
-      iter([...temp,nums[i]], i + 1)
+      bfs([...temp, nums[i]], i + 1)
     }
   }
 
-  iter([], 0)
-  return [...res, "[]"].map(JSON.parse)
-}
+  bfs([], 0)
+
+  return [...set].map(JSON.parse)
+};

@@ -3,10 +3,22 @@
  * @return {boolean}
  */
 const detectCapitalUse = word => {
-  if(word.toUpperCase() === word) return true
-  else if(word.toLowerCase() === word) return true
-  else if (word.length>1 && word[0].toUpperCase() === word[0]
-  && word.slice(1).toLowerCase() === word.slice(1)
-  ) return true
-  else return false
+  let isUpper = []
+
+  for (let i = 0; i < word.length; i++) {
+    if (word.charCodeAt(i) <= 90) isUpper.push(true)
+    else isUpper.push(false)
+  }
+
+  if (!isUpper.includes(false)) return true
+  if (!isUpper.includes(true)) return true
+  if (
+    isUpper.includes(true) &&
+    isUpper.indexOf(true) === 0 &&
+    isUpper.lastIndexOf(true) === 0
+  )
+    return true
+
+  return false
 }
+

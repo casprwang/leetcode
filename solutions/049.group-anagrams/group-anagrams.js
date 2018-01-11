@@ -3,17 +3,20 @@
  * @return {string[][]}
  */
 const groupAnagrams = strs => {
-  let hash = {}
+  let map = {}
 
-  strs.forEach(e=>{
-    let memo = [...e].sort().join("")
+  for (let i = 0; i < strs.length; i++) {
+    let item = strs[i]
+    let ref = sortStr(item)
 
-    if(!hash[memo]) {
-      hash[memo] = [e]
+    if (ref in map) {
+      map[ref].push(item)
     } else {
-      hash[memo].push(e)
+      map[ref] = [item]
     }
-  })
+  }
 
-  return [...Object.values(hash)]
-}
+  return Object.values(map)// arr
+};
+
+const sortStr = s => [...s].sort().join('');

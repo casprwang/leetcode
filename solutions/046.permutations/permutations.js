@@ -2,19 +2,28 @@
  * @param {number[]} nums
  * @return {number[][]}
  */
-const permute = (nums, res = []) => {
-  const iter = temp => {
-    if (temp.length === nums.length) res.push([...temp])
-    else {
-      for (let i = 0; i < nums.length; i++) {
-        if(temp.includes(nums[i])) continue
-        temp.push(nums[i])
-        iter(temp)
-        temp.pop()
-      }
+const permute = nums => {
+  let res = []
+
+  const backtrack = (temp, visited) => {
+
+    if (visited.every(e => e === 1)) {
+      res.push(temp)
+      return
     }
+
+    for (let i = 0; i < nums.length; i++) {
+      if (visited[i] === 1) continue
+      let item = nums[i]
+
+      visited[i] = 1
+      backtrack([...temp, item], visited)
+      visited[i] = undefined
+    }
+
   }
 
-  iter([])
+  backtrack([], Array(nums.length).fill(0))
+
   return res
 }
