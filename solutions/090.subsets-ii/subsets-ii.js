@@ -18,4 +18,4 @@ const subsetsWithDup = nums => {
   bfs([], 0)
 
   return [...set].map(JSON.parse)
-};
+}

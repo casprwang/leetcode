@@ -25,4 +25,4 @@ const leftPad = (i, j) => {
   else j = '' + j
 
   return `${i}:${j}`
-};
+}

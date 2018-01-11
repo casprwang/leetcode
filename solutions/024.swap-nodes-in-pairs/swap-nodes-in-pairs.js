@@ -60,4 +60,4 @@ const swapPairs = head => {
   }
 
   return res.next
-};
+}

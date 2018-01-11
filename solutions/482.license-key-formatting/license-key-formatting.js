@@ -19,4 +19,4 @@ const licenseKeyFormatting = (S, K) => {
 
   if(resArr[0]==='') resArr.shift()
   return resArr.join('-').toUpperCase()
-};
+}

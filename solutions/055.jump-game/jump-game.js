@@ -11,4 +11,4 @@ const canJump = nums => {
   }
 
   return right >= nums.length - 1
-};
+}

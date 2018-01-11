@@ -11,4 +11,4 @@ const findComplement = num => {
   })
 
   return parseInt(reversedArray.join(''), 2)
-};
+}

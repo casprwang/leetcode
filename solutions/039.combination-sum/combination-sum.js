@@ -23,4 +23,4 @@ const combinationSum = (candidates, target) => {
   bfs([], target, 0)
 
   return res
-};
+}

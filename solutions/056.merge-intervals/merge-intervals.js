@@ -30,4 +30,4 @@ const merge = intervals => {
   res.push(new Interval(start, end))
 
   return res
-};
+}

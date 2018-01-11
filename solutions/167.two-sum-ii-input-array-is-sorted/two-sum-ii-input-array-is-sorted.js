@@ -13,4 +13,4 @@ const twoSum = (numbers, target) => {
 
     set.add(target - numbers[i])
   }
-};
+}

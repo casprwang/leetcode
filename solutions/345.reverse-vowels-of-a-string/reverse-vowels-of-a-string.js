@@ -32,5 +32,5 @@ const reverseVowels = s => {
 }
 
 const swap = (s, i, j) => {
-  ;[s[i], s[j]] = [s[j], s[i]]
+  [s[i], s[j]] = [s[j], s[i]]
 }

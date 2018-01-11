@@ -21,9 +21,7 @@
     "url": "https://github.com/wangsongiam/leetcode/issues"
   },
   "homepage": "https://github.com/wangsongiam/leetcode#readme",
-  "dependencies": {
-    "prettier": "^1.5.3"
-  },
+  "dependencies": {},
   "devDependencies": {
     "eslint": "^4.12.1"
   }

@@ -22,4 +22,4 @@ const findRestaurant = (list1, list2) => {
   }
 
   return res
-};
+}

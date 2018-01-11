@@ -10,7 +10,6 @@ var searchInsert = function(nums, target) {
   else {
     if (target<max) {
       return nums.findIndex(e=> e>target)
-    }
-    else { return nums.length}
+    } else { return nums.length}
   }
-};
+}

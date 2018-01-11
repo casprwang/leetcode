@@ -35,4 +35,4 @@ const removeNthFromEnd = (head, n) => {
   }
 
   return ref2
-};
+}

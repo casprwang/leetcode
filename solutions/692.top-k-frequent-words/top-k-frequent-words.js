@@ -5,7 +5,7 @@ const sorter = (a, b) => {
 }
 
 const topKFrequent = (words, k) => {
-  const hash = {};
+  const hash = {}
 
   for (let e of words) {
     if (hash[e]) hash[e]++

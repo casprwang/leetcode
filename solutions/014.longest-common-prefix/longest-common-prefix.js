@@ -3,7 +3,7 @@
  * @return {string}
  */
 const longestCommonPrefix = strs=> {
-  if (!strs.length) return '';
+  if (!strs.length) return ''
   let len = strs.reduce((acc,e)=>{
     if (e.length< acc) acc=e.length
     return acc

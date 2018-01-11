@@ -17,6 +17,6 @@ const groupAnagrams = strs => {
   }
 
   return Object.values(map)// arr
-};
+}
 
-const sortStr = s => [...s].sort().join('');
+const sortStr = s => [...s].sort().join('')

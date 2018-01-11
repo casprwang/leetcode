@@ -15,5 +15,5 @@ const rotate = matrix => {
 }
 
 const swap = (arr, i,j) => {
-  ;[arr[i][j], arr[j][i]] = [arr[j][i], arr[i][j]]
+  [arr[i][j], arr[j][i]] = [arr[j][i], arr[i][j]]
 }

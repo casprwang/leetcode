@@ -1,4 +1,4 @@
-# Leetcode [![styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+# Leetcode
 
 > leetcode solutions with Javascript and Go
 
@@ -206,10 +206,6 @@
 
 ## Preferred coding style
 * ES6/7
-  * properly use Map, Set over Object
-  * arrow function all the time
-  * `forEach`, `map`, `reduce` over `for` loop
-* [Functional programming](https://github.com/hemanth/functional-programming-jargon)
 
 ## Liscense
 MIT

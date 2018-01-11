@@ -80,4 +80,4 @@ const lengthOfLongestSubstring = s => {
   }
 
   return max
-};
+}

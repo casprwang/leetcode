@@ -8,8 +8,7 @@ var removeDuplicates = function(nums) {
     if(set.has(nums[i])) {
       nums.splice(i, 1)
       i--
-    }
-    else set.add(nums[i]) 
+    } else set.add(nums[i]) 
   }
   return nums.length
-};
+}

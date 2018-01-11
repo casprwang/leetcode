@@ -5,7 +5,7 @@
 var MinStack = function () {
   this.stack = []
   this.min = null
-};
+}
 
 /** 
  * @param {number} x
@@ -14,7 +14,7 @@ var MinStack = function () {
 MinStack.prototype.push = function (x) {
   this.stack.push(x)
   this.min = Math.min(...this.stack)
-};
+}
 
 /**
  * @return {void}
@@ -30,7 +30,7 @@ MinStack.prototype.pop = function () {
 
   return val
 
-};
+}
 
 /**
  * @return {number}
@@ -38,14 +38,14 @@ MinStack.prototype.pop = function () {
 MinStack.prototype.top = function () {
   return this.stack[this.stack.length - 1]
 
-};
+}
 
 /**
  * @return {number}
  */
 MinStack.prototype.getMin = function () {
   return this.min
-};
+}
 
 /** 
  * Your MinStack object will be instantiated and called as such:

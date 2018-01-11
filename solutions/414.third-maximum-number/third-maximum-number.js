@@ -11,4 +11,4 @@ var thirdMax = function(nums) {
     if (set.size>2 ) return [...set][2]
   }
   if (set.size<3) return Math.max(...set)
-};
+}

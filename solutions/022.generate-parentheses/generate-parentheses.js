@@ -22,4 +22,4 @@ const generateParenthesis = n => {
   bfs('', 0, 0)
 
   return res
-};
+}

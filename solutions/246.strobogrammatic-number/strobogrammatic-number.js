@@ -7,7 +7,7 @@ const map = new Map([
   ['8', '8'],
   ['1', '1'],
   ['9', '6'],
-  ['0', '0']
+  ['0', '0'],
 ])
 
 const isStrobogrammatic = nums => {

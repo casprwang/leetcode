@@ -27,4 +27,4 @@ const romanToInt = s => {
   }
 
   return sum
-};
+}

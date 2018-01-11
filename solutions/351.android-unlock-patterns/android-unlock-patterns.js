@@ -24,7 +24,7 @@ var numberOfPatterns = function(m, n) {
     false,
     false,
     false,
-    false
+    false,
   ]
   let res = 0
 
