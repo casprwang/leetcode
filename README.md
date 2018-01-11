@@ -207,5 +207,5 @@
 ## Preferred coding style
 * ES6/7
 
-## Liscense
-MIT
+## License
+MIT © [Song Wang](https://songwang.io)
