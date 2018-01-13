@@ -4,6 +4,8 @@
 ## Coding style
 * ES6/7
 
+## Solutions
+
 | # | Problems | Solutions | Difficulty
 |:--:|:-----:|:---------:|:----:|
 |001|[two-sum](https://leetcode.com/problems/two-sum/)| [javascript](.&#x2F;solutions&#x2F;001.two-sum&#x2F;two-sum.js)|Easy
