@@ -2,7 +2,8 @@
 
 > leetcode solutions with Javascript and Go
 ## Coding style
-* ES6/7
+* ES6/7 with Standard.js
+* gofmt
 
 ## Solutions
 
