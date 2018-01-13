@@ -1,6 +1,8 @@
 # Leetcode
 
 > leetcode solutions with Javascript and Go
+## Coding style
+* ES6/7
 
 | # | Problems | Solutions | Difficulty
 |:--:|:-----:|:---------:|:----:|
@@ -203,10 +205,6 @@
 |687|[longest-univalue-path](https://leetcode.com/problems/longest-univalue-path/)| [javascript](.&#x2F;solutions&#x2F;687.longest-univalue-path&#x2F;longest-univalue-path.js)|Easy
 |692|[top-k-frequent-words](https://leetcode.com/problems/top-k-frequent-words/)| [javascript](.&#x2F;solutions&#x2F;692.top-k-frequent-words&#x2F;top-k-frequent-words.js)|Medium
 |729|[my-calendar-i](https://leetcode.com/problems/my-calendar-i/)| [javascript](.&#x2F;solutions&#x2F;729.my-calendar-i&#x2F;my-calendar-i.js)|Medium
-
-
-## Preferred coding style
-* ES6/7
 
 ## License
 MIT © [Song Wang](https://songwang.io)
