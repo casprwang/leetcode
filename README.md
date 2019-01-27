@@ -1,8 +1,9 @@
 # Leetcode
 
-> leetcode solutions with Javascript and Go
+> leetcode solutions with Javascript, Python and Go
 ## Coding style
-* ES6/7 with Standard.js
+* standard
+* pep8
 * gofmt
 
 ## Solutions
