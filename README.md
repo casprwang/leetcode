@@ -2,7 +2,7 @@
 
 > leetcode solutions with Javascript, Python and Go
 ## Coding style
-* standard
+* standardjs
 * pep8
 * gofmt
 
