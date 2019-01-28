@@ -1,15 +1,3 @@
-# Leetcode
-
-> leetcode solutions with Javascript and Go
-## Coding style
-* standardjs
-* pep8
-* gofmt
-
-## Solutions
-
-| # | Problems | Solutions | Difficulty
-|:--:|:-----:|:---------:|:----:|
 |001|[two-sum](https://leetcode.com/problems/two-sum/)| [javascript](.&#x2F;solutions&#x2F;001.two-sum&#x2F;two-sum.js) [python](.&#x2F;solutions&#x2F;001.two-sum&#x2F;two-sum.py)|Easy
 |002|[add-two-numbers](https://leetcode.com/problems/add-two-numbers/)| [javascript](.&#x2F;solutions&#x2F;002.add-two-numbers&#x2F;add-two-numbers.js) [python](.&#x2F;solutions&#x2F;002.add-two-numbers&#x2F;add-two-numbers.py)|Medium
 |003|[longest-substring-without-repeating-characters](https://leetcode.com/problems/longest-substring-without-repeating-characters/)| [javascript](.&#x2F;solutions&#x2F;003.longest-substring-without-repeating-characters&#x2F;longest-substring-without-repeating-characters.js)|Medium
@@ -248,6 +236,3 @@
 |876|[middle-of-the-linked-list](https://leetcode.com/problems/middle-of-the-linked-list/)| [python](.&#x2F;solutions&#x2F;876.middle-of-the-linked-list&#x2F;middle-of-the-linked-list.py)|Easy
 |904|[fruit-into-baskets](https://leetcode.com/problems/fruit-into-baskets/)| [python](.&#x2F;solutions&#x2F;904.fruit-into-baskets&#x2F;fruit-into-baskets.py)|Medium
 |929|[unique-email-addresses](https://leetcode.com/problems/unique-email-addresses/)| [python](.&#x2F;solutions&#x2F;929.unique-email-addresses&#x2F;unique-email-addresses.py)|Easy
-
-## License
-MIT © [Song Wang](https://songwang.io)
